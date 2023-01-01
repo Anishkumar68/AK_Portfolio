@@ -1,5 +1,5 @@
 # AKresuma
-* new resuma 
+* new portfolio
 * added my projects
 * added resuma 
 * responsive web

@@ -9,7 +9,7 @@ body.main-content {
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   color: var(--Color-w);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 :root {
@@ -132,7 +132,10 @@ section {
   justify-content: center;
   transform: translateY(-50%);
 }
-.fab,.far,.fas,.fa{
+.fab,
+.far,
+.fas,
+.fa {
   color: var(--Color-btn);
 }
 .control {
@@ -146,7 +149,7 @@ section {
   justify-content: center;
   align-items: center;
   margin: 0.7rem 0;
-  box-shadow: var(--box-shadow-3);
+  /* box-shadow: var(--box-shadow-3); */
   transition: all 0.5s ease-in-out;
 }
 
@@ -637,7 +640,7 @@ i {
 .portfolios .portfolio-item .hover-item .icons .icon:hover {
   color: var(--color-grey-5);
   box-shadow: var(--box-shadow-4);
-  border: 2px  var(--color-primary-2);
+  border: 2px var(--color-primary-2);
 }
 
 .portfolios .portfolio-item .hover-item .icons .icon:hover i {
@@ -668,7 +671,6 @@ i {
   font-weight: 500;
 }
 .frame:hover {
-  border: 2px solid var(--color-grey-5);
   transform: translateY(-5px);
   border: 2px solid var(--color-secondary-0);
   box-shadow: var(--box-shadow-4);
@@ -997,8 +999,8 @@ input:hover {
   .contact-content-con {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .contact-content-con .right-contact {
     margin-left: 0;
@@ -1007,8 +1009,8 @@ input:hover {
   .contact-content-con .right-contact .i-c-2 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .contact-content-con .right-contact .i-c-2 :last-child {
     margin-left: 0;
@@ -1024,13 +1026,11 @@ input:hover {
 
 @media screen and (max-width: 1250px) {
   .blogs {
-  
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 6rem;
   }
   .portfolios {
-    
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .header-content .right-header {
     padding-right: 9rem;
@@ -1039,18 +1039,16 @@ input:hover {
 
 @media screen and (max-width: 660px) {
   .blogs {
-     
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .portfolios {
-     
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 @media screen and (max-width: 1070px) {
   .about-container {
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .about-container .right-about {
     padding-top: 2.5rem;
@@ -1074,8 +1072,7 @@ input:hover {
     padding-right: 0rem;
   }
   .header-content {
-  
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     padding-bottom: 6rem;
   }
   .left-header .h-shape {
@@ -1104,16 +1101,13 @@ input:hover {
     padding: 7rem 3rem;
   }
   .about-stats .progress-bars {
-   
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .about-container .right-about {
-    
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .timeline {
-    
-        grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
   .main-title h2 {
     font-size: 3rem;

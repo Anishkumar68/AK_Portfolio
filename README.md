@@ -1,4 +1,4 @@
-# https://anishkumar68.github.io/AKresuma/
+# https://anishkumar68.github.io/AK_Portfolio/
 # AKresuma
 * new portfolio
 * added my projects

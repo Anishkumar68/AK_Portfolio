@@ -6,9 +6,9 @@ import ak_logo from "../assets/ak_logo.png";
 
 const Hero = () => {
 	return (
-		<section className="flex items-center justify-around h-full p-56 text-zinc-100">
+		<section className="flex items-center justify-around h-screen p-56 text-zinc-100">
 			{/* Left Section: 3D Image with Orbit */}
-			<div className="relative flex flex-col items-center">
+			<div className="flex flex-col items-center">
 				<div className="w-52 h-52 rounded-full border-2 border-white/20 flex items-center justify-center transition-all duration-300 ease-in-out hover:border-[#ffcc00]">
 					<motion.img
 						src={ak_logo}
@@ -58,9 +58,7 @@ const Hero = () => {
 					Full-Stack Developer
 				</h2>
 				<div className="mt-5 flex gap-4 justify-center">
-					<button className="px-6 py-3 font-semibold bg-[#ffcc00] text-[#191a1a]  rounded-md transition-all duration-300 hover:bg-[#ffd633]">
-						Hire Me
-					</button>
+					<button className="hireme-btn">Hire Me</button>
 					<button className="px-6 py-3 font-semibold bg-transparent text-white border border-white rounded-md transition-all duration-300 hover:bg-white hover:text-black">
 						Contact Me
 					</button>

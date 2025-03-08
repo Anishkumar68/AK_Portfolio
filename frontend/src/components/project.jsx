@@ -20,7 +20,7 @@ const Projects = () => {
 	return (
 		<>
 			<div className="p-8">
-				<h2 className="text-3xl font-bold mb-4 text-yellow-500">My projects</h2>
+				<h2 className="title ">My projects</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{projects.map((project) => (
 						<div

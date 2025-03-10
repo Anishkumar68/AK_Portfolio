@@ -10,7 +10,7 @@
 		@apply text-5xl font-bold text-[#ffcc00] hover:text-[#8502ff] transition-all duration-300 ease-in-out;
 	}
 	.hireme-btn {
-		@apply px-6 py-3 font-semibold bg-[#ffcc00] text-[#191a1a] rounded-md transition-all duration-300 ease-in hover:bg-[#ffd633];
+		@apply px-8 py-3 font-semibold bg-[#ffcc00] text-[#191a1a] rounded-md transition-all duration-300 ease-in-out hover:bg-[#ffd633] z-10;
 	}
 	.notification {
 		@apply flex flex-col relative w-72 h-32 rounded-xl overflow-hidden bg-[#29292c] isolate;
@@ -53,7 +53,14 @@
 
 	.notiglow,
 	.notiborderglow {
-		@apply absolute w-80 h-80 bg-white opacity-0 transition-opacity duration-300;
+		@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20rem] h-[20rem];
+		background: radial-gradient(
+			circle closest-side at center,
+			white,
+			transparent
+		);
+		opacity: 0;
+		transition: opacity 300ms ease;
 	}
 
 	.notiglow {
@@ -69,77 +76,6 @@
 	}
 
 	.notification:hover .notiborderglow {
-		@apply opacity-10;
-	}
-}
-
-@layer components {
-	.highlight-box {
-		@apply flex flex-col relative rounded-xl overflow-hidden bg-[#29292c] isolate w-full max-w-[18rem] h-32;
-	}
-
-	/* Background inner card */
-	.highlight-box::before {
-		content: "";
-		@apply absolute inset-0.5 rounded-[0.9375rem] bg-[#18181b] z-20;
-	}
-
-	/* Left Gradient Line */
-	.highlight-box::after {
-		content: "";
-		@apply absolute w-1 h-[calc(100%-1.3rem)] left-2 top-[0.65rem] 
-	  bg-gradient-to-b from-[#2eadff] via-[#3d83ff] to-[#7e61ff] 
-	  rounded-sm transition-transform duration-300 ease-in-out;
-	}
-
-	.highlight-box:hover::after {
-		@apply translate-x-1;
-	}
-
-	/* Title */
-	.highlight-title {
-		@apply text-[#32a6ff] font-medium text-lg pl-5 py-2.5 transition-transform duration-300 ease-in-out relative z-30;
-	}
-
-	.highlight-box:hover .highlight-title {
-		@apply translate-x-1;
-	}
-
-	/* Body */
-	.highlight-body {
-		@apply text-[#99999d] px-5 transition-transform duration-300 ease-in-out relative z-30;
-	}
-
-	.highlight-box:hover .highlight-body {
-		@apply translate-x-1.5;
-	}
-
-	/* Hover Glow Effects */
-	.highlight-glow,
-	.highlight-borderglow {
-		@apply absolute w-80 h-80 opacity-0 transition-opacity duration-300 ease-in-out;
-	}
-
-	.highlight-glow {
-		background: radial-gradient(
-			circle closest-side,
-			rgba(255, 255, 255, 0.4),
-			transparent
-		);
-		@apply z-10;
-	}
-
-	.highlight-borderglow {
-		background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-		@apply z-0;
-	}
-
-	/* Glow appears on hover */
-	.highlight-box:hover .highlight-glow {
-		@apply opacity-10;
-	}
-
-	.highlight-box:hover .highlight-borderglow {
 		@apply opacity-10;
 	}
 }

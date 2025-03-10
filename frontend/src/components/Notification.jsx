@@ -1,8 +1,17 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IoClose } from "react-icons/io5"; // Importing the close icon
 
-const HighlightBox = ({ title, message, onClose }) => {
+const HighlightBox = ({ title, message }) => {
+	const [isVisible, setIsVisible] = useState(true);
+
+	// Function to close the notification
+	const handleClose = () => {
+		setIsVisible(false);
+	};
+
+	// Ensure the entire component is removed when isVisible is false
+	if (!isVisible) return null;
 	return (
 		<StyledWrapper>
 			<div className="notification">
@@ -10,8 +19,8 @@ const HighlightBox = ({ title, message, onClose }) => {
 				<div className="notiborderglow" />
 
 				{/* Close Button */}
-				<button className="close-btn" onClick={onClose}>
-					<IoClose size={20} />
+				<button className="close-btn" onClick={handleClose}>
+					<IoClose size={30} />
 				</button>
 
 				{/* Title */}
@@ -20,10 +29,7 @@ const HighlightBox = ({ title, message, onClose }) => {
 				{/* Message */}
 				<div className="notibody">{message}</div>
 
-				{/* Hire Me Button */}
-				<div className="btn-container">
-					<button className="hireme-btn">Hire Me</button>
-				</div>
+				<button className="hireme-btn ">Hire Me</button>
 			</div>
 		</StyledWrapper>
 	);
@@ -33,17 +39,19 @@ const StyledWrapper = styled.div`
 	.notification {
 		display: flex;
 		flex-direction: column;
-		position: relative;
+		position: fixed;
+		bottom: 20px;
+		left: 20px;
 		width: 18rem;
-		height: 8rem;
+		height: auto;
 		background: #29292c;
 		border-radius: 1rem;
 		overflow: hidden;
-		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-			sans-serif;
-		font-size: 16px;
+		padding: 16px;
+
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+		z-index: 1000;
 		--gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
-		--color: #32a6ff;
 	}
 
 	.notification:before {
@@ -71,73 +79,31 @@ const StyledWrapper = styled.div`
 	}
 
 	.notititle {
-		color: var(--color);
-		padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+		color: #32a6ff;
 		font-weight: 500;
 		font-size: 1.1rem;
-		transition: transform 300ms ease;
-		z-index: 5;
-	}
-
-	.notification:hover .notititle {
-		transform: translateX(0.15rem);
+		margin-bottom: 5px;
+		text-align: center;
 	}
 
 	.notibody {
 		color: #99999d;
-		padding: 0 1.25rem;
-		transition: transform 300ms ease;
-		z-index: 5;
-	}
-
-	.notification:hover .notibody {
-		transform: translateX(0.25rem);
-	}
-
-	.notiglow,
-	.notiborderglow {
-		position: absolute;
-		width: 20rem;
-		height: 20rem;
-		transform: translate(-50%, -50%);
-		background: radial-gradient(
-			circle closest-side at center,
-			white,
-			transparent
-		);
-		opacity: 0;
-		transition: opacity 300ms ease;
-	}
-
-	.notiglow {
-		z-index: 3;
-	}
-
-	.notiborderglow {
-		z-index: 1;
-	}
-
-	.notification:hover .notiglow {
-		opacity: 0.1;
-	}
-
-	.notification:hover .notiborderglow {
-		opacity: 0.1;
-	}
-
-	.btn-container {
-		display: flex;
-		justify-content: center;
-		margin-top: 10px;
+		font-size: 0.9rem;
+		line-height: 1.4;
+		margin-bottom: 10px;
+		text-align: center;
 	}
 
 	.hireme-btn {
 		background: #ffcc00;
 		color: black;
 		font-weight: bold;
-		padding: 6px 12px;
-		border-radius: 6px;
+		padding: 8px;
+		border-radius: 8px;
 		transition: all 0.3s ease;
+		text-align: center;
+		width: 100%;
+		margin: auto 6px;
 	}
 
 	.hireme-btn:hover {
@@ -153,7 +119,7 @@ const StyledWrapper = styled.div`
 		border: none;
 		color: white;
 		cursor: pointer;
-		z-index: 10;
+		z-index: 50;
 	}
 
 	.close-btn:hover {

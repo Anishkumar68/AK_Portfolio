@@ -14,18 +14,23 @@ import About from "./components/About";
 import HighlightBox from "./components/Notification";
 
 function App() {
-	const [showHighlight, setShowHighlight] = useState(true);
+	// ✅ State to control visibility of HighlightBox
+	const [showHighlightBox, setShowHighlightBox] = useState(true);
+
 	return (
 		<Pattern>
 			<Router>
 				<Navbar />
-				{showHighlight && (
+
+				{/* ✅ Render HighlightBox only if showHighlightBox is true */}
+				{showHighlightBox && (
 					<HighlightBox
 						title="🚀 Special Offer!"
 						message="Get a free consultation on your project today!"
-						onClose={() => setShowHighlight(false)}
+						setShowHighlightBox={setShowHighlightBox}
 					/>
 				)}
+
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />

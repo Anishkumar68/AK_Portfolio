@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const api_url = "http://127.0.0.1:8000";
 
 export const api = axios.create({
@@ -8,30 +9,35 @@ export const api = axios.create({
 	},
 });
 
-// fetch all project
-
+// Fetch all projects
 export const getProjects = async () => {
 	try {
-		const response = await api.get("projects/");
+		const response = await api.get("/projects/"); // Added leading `/`
+		return response.data; // Return the fetched data
 	} catch (error) {
-		console.log(error);
+		console.error("Error fetching projects:", error);
+		return null; // Return null to handle errors gracefully
 	}
 };
-// fetch all project
 
+// Fetch all blogs
 export const getBlog = async () => {
 	try {
-		const response = await api.get("blog/");
+		const response = await api.get("/blog/"); // Added leading `/`
+		return response.data;
 	} catch (error) {
-		console.log(error);
+		console.error("Error fetching blog:", error);
+		return null;
 	}
 };
-// fetch all project
 
+// Fetch all testimonials
 export const getTestimonial = async () => {
 	try {
-		const response = await api.get("testimonials/");
+		const response = await api.get("/testimonials/"); // Added leading `/`
+		return response.data;
 	} catch (error) {
-		console.log(error);
+		console.error("Error fetching testimonials:", error);
+		return null;
 	}
 };

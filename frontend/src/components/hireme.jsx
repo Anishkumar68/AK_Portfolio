@@ -45,12 +45,16 @@ const HireMe = () => {
 			<div className="max-w-6xl mx-auto px-6">
 				{/* Title & Action Line */}
 				<div className="text-center mb-10">
-					<h2 className="title ">Hire Me</h2>
-					<HighlightBox
-						title="🚀 Special Offer!"
-						message="Get a free consultation on your project today!"
-						fullWidth={true}
-					/>
+					<h2 className="title mb-2">Hire Me</h2>
+					<span
+						className="relative bg-[#383525] text-white font-medium  px-3 py-1 transition-all duration-300  rounded-t-lg inline-block
+    after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] 
+    after:bg-[#ffcc00] after:opacity-50 after:transition-all after:duration-500 
+    hover:after:opacity-100 hover:after:shadow-[0_0_10px_#ffcc00]"
+					>
+						Let's build something amazing together. Choose a service that fits
+						your needs!
+					</span>
 				</div>
 
 				{/* Cards */}

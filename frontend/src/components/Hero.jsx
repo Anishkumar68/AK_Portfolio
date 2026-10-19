@@ -1,10 +1,12 @@
 import React from "react";
-import { FiDownload, FiArrowRight, FiMail, FiPhone } from "react-icons/fi";
+import { FiDownload, FiArrowRight, FiMail, FiPhone, FiExternalLink } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaPython, FaReact } from "react-icons/fa";
 import portfolioData from "../data/portfolioData.json";
+import { resolveImage, getResumeInfo, DEFAULT_FALLBACK_AVATAR } from "../utils/assetHelper";
 
 const Hero = ({ onSelectTab, onOpenContact }) => {
 	const { personal, socials, hero } = portfolioData;
+	const resumeInfo = getResumeInfo(personal);
 
 	return (
 		<div className="relative pt-24 sm:pt-28 pb-16 overflow-hidden">
@@ -20,7 +22,9 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 							<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c5ff41] opacity-75" />
 							<span className="relative inline-flex rounded-full h-2 w-2 bg-[#c5ff41]" />
 						</span>
-						<span className="font-medium">{hero.badge}</span>
+						<span className="font-medium">
+							{hero.badge}
+						</span>
 					</div>
 				</div>
 
@@ -37,14 +41,14 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 						<div className="absolute inset-0 m-auto w-36 sm:w-56 h-36 sm:h-56 rounded-full bg-gradient-to-tr from-[#c5ff41]/30 via-white/10 to-[#c5ff41]/20 blur-xl -z-10 animate-pulse" />
 
 						{/* Avatar Circle */}
-						<div className="relative w-36 h-36 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full p-1.5 bg-gradient-to-b from-white/30 via-white/5 to-[#c5ff41]/40 shadow-2xl transition-transform duration-500 hover:scale-105 group">
+						<div className="relative w-36 h-36 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full p-1.5 bg-gradient-to-b from-white/30 via-white/5 to-[#c5ff41]/40 shadow-2xl transition-transform duration-500 hover:scale-105 group bg-[#16161c]">
 							<img
-								src={personal.avatar}
+								src={resolveImage(personal.avatar)}
 								alt={personal.name}
 								className="w-full h-full rounded-full object-cover border-2 border-[#121216] shadow-inner"
 								onError={(e) => {
 									e.target.onerror = null;
-									e.target.src = personal.logo;
+									e.target.src = DEFAULT_FALLBACK_AVATAR;
 								}}
 							/>
 
@@ -86,14 +90,17 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 
 				{/* Primary Call to Action Buttons */}
 				<div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-					{/* Download Resume Button */}
+					{/* Resume Link/Download Button (Google Drive URL or PDF) */}
 					<a
-						href={personal.resumePdf}
-						download={personal.resumeFilename}
+						href={resumeInfo.url}
+						target={resumeInfo.isExternal ? "_blank" : undefined}
+						rel={resumeInfo.isExternal ? "noopener noreferrer" : undefined}
+						download={resumeInfo.isExternal ? undefined : resumeInfo.filename}
 						className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm sm:text-base font-semibold bg-[#c5ff41] text-[#0c0c0f] hover:bg-[#b0eb31] transition-all duration-200 shadow-xl shadow-[#c5ff41]/20 active:scale-95"
 					>
 						<FiDownload className="text-lg" />
-						<span>Download Resume (PDF)</span>
+						<span>{resumeInfo.isDrive ? "Open Resume (Drive)" : "Download Resume (PDF)"}</span>
+						{resumeInfo.isExternal && <FiExternalLink className="text-xs text-black/70" />}
 					</a>
 
 					{/* View Career & Work */}
@@ -154,15 +161,10 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 				{/* Metrics / Stats Row */}
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-14 sm:mt-20">
 					{hero.stats.map((stat, idx) => (
-						<div
-							key={idx}
-							className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 text-center"
-						>
+						<div key={idx} className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 text-center">
 							<div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
 								{stat.value.replace(/[%+]/g, "")}
-								<span className="text-[#c5ff41]">
-									{stat.value.match(/[%+]/)?.[0] || ""}
-								</span>
+								<span className="text-[#c5ff41]">{stat.value.match(/[%+]/)?.[0] || ""}</span>
 							</div>
 							<div className="text-xs sm:text-sm font-semibold text-zinc-400 uppercase tracking-wider mt-1">
 								{stat.label}
@@ -175,17 +177,15 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 				{/* Continuous Scrolling Marquee Ribbon */}
 				<div className="relative mt-12 sm:mt-16 py-4 overflow-hidden border-y border-white/[0.08] bg-black/40">
 					<div className="flex w-max animate-marquee space-x-8">
-						{[...hero.marquee, ...hero.marquee, ...hero.marquee].map(
-							(item, idx) => (
-								<div
-									key={idx}
-									className="flex items-center space-x-3 text-xs sm:text-sm font-bold tracking-widest text-zinc-400 uppercase whitespace-nowrap"
-								>
-									<span>{item}</span>
-									<span className="text-[#c5ff41] text-xs">•</span>
-								</div>
-							),
-						)}
+						{[...hero.marquee, ...hero.marquee, ...hero.marquee].map((item, idx) => (
+							<div
+								key={idx}
+								className="flex items-center space-x-3 text-xs sm:text-sm font-bold tracking-widest text-zinc-400 uppercase whitespace-nowrap"
+							>
+								<span>{item}</span>
+								<span className="text-[#c5ff41] text-xs">•</span>
+							</div>
+						))}
 					</div>
 				</div>
 
@@ -211,16 +211,9 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
 						{hero.quickOverview.map((item, idx) => (
-							<div
-								key={idx}
-								className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]"
-							>
-								<div className="text-xs font-semibold text-[#c5ff41] uppercase">
-									{item.label}
-								</div>
-								<div className="text-base font-bold text-white mt-1">
-									{item.title}
-								</div>
+							<div key={idx} className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
+								<div className="text-xs font-semibold text-[#c5ff41] uppercase">{item.label}</div>
+								<div className="text-base font-bold text-white mt-1">{item.title}</div>
 								<div className="text-xs text-zinc-400 mt-0.5">{item.meta}</div>
 								<p className="text-xs text-zinc-400 mt-2 leading-relaxed">
 									{item.desc}

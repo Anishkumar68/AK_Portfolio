@@ -1,10 +1,12 @@
 import React from "react";
-import { FiArrowUp } from "react-icons/fi";
+import { FiArrowUp, FiExternalLink } from "react-icons/fi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import portfolioData from "../data/portfolioData.json";
+import { resolveImage, getResumeInfo, DEFAULT_FALLBACK_AVATAR } from "../utils/assetHelper";
 
 const Footer = ({ onSelectTab, onOpenContact }) => {
 	const { personal, socials } = portfolioData;
+	const resumeInfo = getResumeInfo(personal);
 
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
@@ -18,12 +20,12 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 					<div className="flex flex-col items-center md:items-start text-center md:text-left">
 						<div className="flex items-center gap-2.5">
 							<img
-								src={personal.logo}
+								src={resolveImage(personal.avatar)}
 								alt={personal.name}
-								className="w-7 h-7 rounded-full object-cover border border-white/20"
+								className="w-7 h-7 rounded-full object-cover border border-white/20 bg-[#16161c]"
 								onError={(e) => {
 									e.target.onerror = null;
-									e.target.src = personal.logo;
+									e.target.src = DEFAULT_FALLBACK_AVATAR;
 								}}
 							/>
 							<span className="font-bold text-white text-base tracking-tight">
@@ -56,11 +58,14 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 							Career
 						</button>
 						<a
-							href={personal.resumePdf}
-							download={personal.resumeFilename}
-							className="text-[#c5ff41] hover:underline"
+							href={resumeInfo.url}
+							target={resumeInfo.isExternal ? "_blank" : undefined}
+							rel={resumeInfo.isExternal ? "noopener noreferrer" : undefined}
+							download={resumeInfo.isExternal ? undefined : resumeInfo.filename}
+							className="text-[#c5ff41] hover:underline inline-flex items-center gap-1"
 						>
-							Resume (PDF)
+							<span>Resume</span>
+							{resumeInfo.isExternal && <FiExternalLink className="text-[10px]" />}
 						</a>
 						<button
 							onClick={onOpenContact}
@@ -102,8 +107,7 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 
 				<div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 text-[11px] text-zinc-500">
 					<div>
-						© {new Date().getFullYear()} {personal.name}. Built for high
-						performance & clean readability.
+						© {new Date().getFullYear()} {personal.name}. Built for high performance & clean readability.
 					</div>
 					<div className="flex items-center gap-2">
 						<span className="w-1.5 h-1.5 rounded-full bg-[#c5ff41]" />

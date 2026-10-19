@@ -1,8 +1,9 @@
 import React from "react";
-import { FiDownload, FiCheckCircle, FiBookOpen, FiArrowRight, FiMapPin, FiMail, FiPhone, FiCloud } from "react-icons/fi";
+import { FiDownload, FiCheckCircle, FiBookOpen, FiArrowRight, FiMapPin, FiMail, FiPhone, FiCloud, FiExternalLink } from "react-icons/fi";
 import { FaPython, FaReact, FaDocker, FaGitAlt, FaAws } from "react-icons/fa";
 import { SiFastapi, SiDjango, SiMysql, SiRedis, SiOpenai } from "react-icons/si";
 import portfolioData from "../data/portfolioData.json";
+import { resolveImage, getResumeInfo, DEFAULT_FALLBACK_AVATAR } from "../utils/assetHelper";
 
 const ICON_MAP = {
 	python: FaPython,
@@ -20,6 +21,7 @@ const ICON_MAP = {
 
 const About = ({ onSelectTab, onOpenContact }) => {
 	const { personal, about } = portfolioData;
+	const resumeInfo = getResumeInfo(personal);
 
 	return (
 		<div className="pt-24 sm:pt-28 pb-20 max-w-5xl mx-auto px-4 sm:px-6">
@@ -41,12 +43,12 @@ const About = ({ onSelectTab, onOpenContact }) => {
 				<div className="flex flex-col md:flex-row gap-8 items-center">
 					<div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-white/10 p-1 bg-white/[0.03]">
 						<img
-							src={personal.avatar}
+							src={resolveImage(personal.avatar)}
 							alt={personal.name}
-							className="w-full h-full object-cover rounded-xl"
+							className="w-full h-full object-cover rounded-xl bg-[#16161c]"
 							onError={(e) => {
 								e.target.onerror = null;
-								e.target.src = personal.logo;
+								e.target.src = DEFAULT_FALLBACK_AVATAR;
 							}}
 						/>
 					</div>
@@ -79,12 +81,15 @@ const About = ({ onSelectTab, onOpenContact }) => {
 
 						<div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-6">
 							<a
-								href={personal.resumePdf}
-								download={personal.resumeFilename}
+								href={resumeInfo.url}
+								target={resumeInfo.isExternal ? "_blank" : undefined}
+								rel={resumeInfo.isExternal ? "noopener noreferrer" : undefined}
+								download={resumeInfo.isExternal ? undefined : resumeInfo.filename}
 								className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-[#c5ff41] text-[#0c0c0f] hover:bg-[#b0eb31] transition-all"
 							>
 								<FiDownload />
-								<span>Download Resume</span>
+								<span>{resumeInfo.isDrive ? "Open Resume (Drive)" : "Download Resume"}</span>
+								{resumeInfo.isExternal && <FiExternalLink className="text-xs text-black/70" />}
 							</a>
 
 							<button

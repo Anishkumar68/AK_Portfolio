@@ -1,9 +1,11 @@
 import React from "react";
-import { FiDownload, FiMail } from "react-icons/fi";
+import { FiDownload, FiMail, FiExternalLink } from "react-icons/fi";
 import portfolioData from "../data/portfolioData.json";
+import { resolveImage, getResumeInfo, DEFAULT_FALLBACK_AVATAR } from "../utils/assetHelper";
 
 const Navbar = ({ activeTab, onSelectTab, onOpenContact }) => {
 	const { personal } = portfolioData;
+	const resumeInfo = getResumeInfo(personal);
 
 	return (
 		<header className="fixed top-3 sm:top-5 inset-x-0 mx-auto z-50 w-[94%] max-w-4xl transition-all duration-300">
@@ -16,12 +18,12 @@ const Navbar = ({ activeTab, onSelectTab, onOpenContact }) => {
 				>
 					<div className="relative">
 						<img
-							src={personal.logo}
+							src={resolveImage(personal.avatar)}
 							alt={personal.name}
-							className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-white/20 group-hover:border-[#c5ff41] transition-all duration-300 shadow-md"
+							className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-white/20 group-hover:border-[#c5ff41] transition-all duration-300 shadow-md bg-[#16161c]"
 							onError={(e) => {
 								e.target.onerror = null;
-								e.target.src = personal.logo;
+								e.target.src = DEFAULT_FALLBACK_AVATAR;
 							}}
 						/>
 						<span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-[#c5ff41] ring-2 ring-[#0c0c0f]" />
@@ -63,15 +65,18 @@ const Navbar = ({ activeTab, onSelectTab, onOpenContact }) => {
 
 				{/* Action CTAs */}
 				<div className="flex items-center gap-2">
-					{/* Resume Download CTA */}
+					{/* Resume Link CTA (Supports Google Drive URL or local download) */}
 					<a
-						href={personal.resumePdf}
-						download={personal.resumeFilename}
+						href={resumeInfo.url}
+						target={resumeInfo.isExternal ? "_blank" : undefined}
+						rel={resumeInfo.isExternal ? "noopener noreferrer" : undefined}
+						download={resumeInfo.isExternal ? undefined : resumeInfo.filename}
 						className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-zinc-200 bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 hover:border-white/20 transition-all duration-200 active:scale-95"
-						title="Download Resume (PDF)"
+						title={resumeInfo.isDrive ? "Open Google Drive Resume" : "Download Resume (PDF)"}
 					>
 						<FiDownload className="text-xs text-[#c5ff41]" />
 						<span>CV</span>
+						{resumeInfo.isExternal && <FiExternalLink className="text-[10px] text-zinc-400" />}
 					</a>
 
 					{/* Contact / Hire Me CTA */}

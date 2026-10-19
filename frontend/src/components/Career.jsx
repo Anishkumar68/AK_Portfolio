@@ -2,9 +2,11 @@ import React from "react";
 import { FiDownload, FiExternalLink, FiBriefcase, FiCalendar, FiMapPin, FiCheckCircle, FiFolder } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import portfolioData from "../data/portfolioData.json";
+import { resolveImage, getResumeInfo, DEFAULT_FALLBACK_BANNER } from "../utils/assetHelper";
 
 const Career = ({ onOpenContact }) => {
 	const { personal, career } = portfolioData;
+	const resumeInfo = getResumeInfo(personal);
 
 	return (
 		<div className="pt-24 sm:pt-28 pb-20 max-w-5xl mx-auto px-4 sm:px-6">
@@ -32,7 +34,7 @@ const Career = ({ onOpenContact }) => {
 							Official Document
 						</div>
 						<h3 className="text-lg sm:text-xl font-extrabold text-white">
-							{personal.name} — Resume (PDF)
+							{personal.name} — Resume {resumeInfo.isDrive ? "(Google Drive)" : "(PDF)"}
 						</h3>
 						<p className="text-xs text-zinc-400 mt-0.5">
 							{personal.role} • {personal.specialization}
@@ -42,15 +44,18 @@ const Career = ({ onOpenContact }) => {
 
 				<div className="flex items-center gap-3 w-full md:w-auto">
 					<a
-						href={personal.resumePdf}
-						download={personal.resumeFilename}
+						href={resumeInfo.url}
+						target={resumeInfo.isExternal ? "_blank" : undefined}
+						rel={resumeInfo.isExternal ? "noopener noreferrer" : undefined}
+						download={resumeInfo.isExternal ? undefined : resumeInfo.filename}
 						className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#c5ff41] text-[#0c0c0f] hover:bg-[#b0eb31] transition-all shadow-lg active:scale-95"
 					>
 						<FiDownload className="text-base" />
-						<span>Download Resume</span>
+						<span>{resumeInfo.isDrive ? "Open Drive Resume" : "Download Resume"}</span>
+						{resumeInfo.isExternal && <FiExternalLink className="text-xs text-black/70" />}
 					</a>
 					<a
-						href={personal.resumePdf}
+						href={resumeInfo.url}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-full text-xs sm:text-sm font-semibold bg-white/[0.06] text-white hover:bg-white/[0.12] border border-white/10 transition-all"
@@ -166,12 +171,12 @@ const Career = ({ onOpenContact }) => {
 							{/* Project Visual Thumbnail */}
 							<div className="relative h-48 sm:h-52 w-full bg-[#111116] overflow-hidden border-b border-white/[0.06]">
 								<img
-									src={project.image}
+									src={resolveImage(project.image, DEFAULT_FALLBACK_BANNER)}
 									alt={project.title}
 									className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
 									onError={(e) => {
 										e.target.onerror = null;
-										e.target.src = "/digitalbank.png";
+										e.target.src = DEFAULT_FALLBACK_BANNER;
 									}}
 								/>
 								<div className="absolute inset-0 bg-gradient-to-t from-[#141419] via-transparent to-transparent opacity-90" />

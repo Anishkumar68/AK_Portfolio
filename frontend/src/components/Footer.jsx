@@ -28,7 +28,7 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 							</span>
 						</div>
 						<p className="text-xs text-zinc-500 mt-1">
-							Python Full-Stack Developer • Gurugram, India
+							Software Engineer (Python, FastAPI & AWS) • Gurugram, India
 						</p>
 					</div>
 
@@ -70,7 +70,7 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 					{/* Socials & Back to Top */}
 					<div className="flex items-center gap-3">
 						<a
-							href="https://www.linkedin.com/in/anishkumar-pythondev"
+							href="https://linkedin.com/in/anishkumar-python"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="p-2 rounded-full glass-card hover:text-[#0A66C2] transition-colors"
@@ -79,7 +79,7 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 							<FaLinkedin className="text-sm" />
 						</a>
 						<a
-							href="https://github.com/Anishkumar68"
+							href="https://github.com/anishkumar68"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="p-2 rounded-full glass-card hover:text-white transition-colors"

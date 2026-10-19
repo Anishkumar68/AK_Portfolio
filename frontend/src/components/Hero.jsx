@@ -5,19 +5,20 @@ import { SiOpenai, SiDjango, SiTailwindcss, SiDocker, SiMysql, SiJavascript } fr
 
 const Hero = ({ onSelectTab, onOpenContact }) => {
 	const tickerItems = [
-		"PYTHON 3",
-		"DJANGO",
-		"FLASK",
-		"REACT.JS",
+		"PYTHON",
 		"FASTAPI",
-		"JAVASCRIPT (ES6+)",
-		"TAILWIND CSS",
-		"LLM & CHATBOTS",
-		"OPENAI API",
-		"REST APIS",
-		"MYSQL",
+		"AWS LAMBDA",
+		"DYNAMODB",
+		"LANGCHAIN & RAG",
+		"SERVERLESS",
+		"DJANGO",
 		"DOCKER",
-		"GIT & GITHUB",
+		"REST APIS",
+		"REDIS",
+		"OPENAI & DEEPSEEK",
+		"REACT.JS",
+		"MICROSERVICES",
+		"POSTGRESQL",
 	];
 
 	return (
@@ -35,7 +36,7 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 							<span className="relative inline-flex rounded-full h-2 w-2 bg-[#c5ff41]" />
 						</span>
 						<span className="font-medium">
-							Available for Immediate Hire • Full-Stack / Python Developer
+							Available for Immediate Hire • Software Engineer (Python, FastAPI & AWS)
 						</span>
 					</div>
 				</div>
@@ -44,7 +45,7 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 				<div className="relative flex flex-col items-center justify-center text-center my-4 sm:my-8 select-none">
 					{/* Top Word of H1 */}
 					<h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-shine leading-none">
-						FULL STACK
+						SOFTWARE
 					</h1>
 
 					{/* Center Image Container with Glow & Floating Badges */}
@@ -67,29 +68,29 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 							{/* Floating Pill Badges */}
 							<div className="absolute -left-4 sm:-left-8 top-1/4 glass-card px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold text-white flex items-center gap-1.5 shadow-xl border border-white/10 animate-float">
 								<FaPython className="text-[#c5ff41]" />
-								<span>Python & AI</span>
+								<span>Python & AWS</span>
 							</div>
 
 							<div className="absolute -right-4 sm:-right-8 bottom-1/4 glass-card px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold text-white flex items-center gap-1.5 shadow-xl border border-white/10 animate-float" style={{ animationDelay: "1.5s" }}>
 								<FaReact className="text-[#61dafb]" />
-								<span>React & Web</span>
+								<span>FastAPI & AI</span>
 							</div>
 						</div>
 					</div>
 
 					{/* Bottom Word of H1 */}
 					<h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-shine leading-none">
-						DEVELOPER
+						ENGINEER
 					</h2>
 				</div>
 
 				{/* Professional Bio Statement */}
 				<div className="max-w-2xl mx-auto text-center mt-6 sm:mt-8">
 					<p className="text-base sm:text-lg md:text-xl text-zinc-300 font-normal leading-relaxed">
-						Hi, I'm <span className="text-white font-semibold">Anish Kumar</span>. A Python Full-Stack & AI Developer with commercial experience in creating LLM-driven chatbots, scalable web backends, and responsive user experiences.
+						Hi, I'm <span className="text-white font-semibold">Anish Kumar</span>. A Software Engineer with <span className="text-[#c5ff41] font-semibold">3+ years of experience</span> building scalable backend systems, serverless architectures, and AI integrations using Python, FastAPI, and AWS.
 					</p>
 					<p className="text-xs sm:text-sm text-zinc-500 mt-2 font-medium">
-						Based in Gurugram / Neemrana • Ready to join immediately & make an impact on day one.
+						Gurugram, Haryana • Experienced in REST APIs, Microservices, Event-Driven AWS & AI Workflows
 					</p>
 				</div>
 
@@ -110,7 +111,7 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 						onClick={() => onSelectTab("career")}
 						className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm sm:text-base font-semibold bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/10 hover:border-white/20 transition-all duration-200 active:scale-95"
 					>
-						<span>View Career & Work</span>
+						<span>View Experience & Projects</span>
 						<FiArrowRight className="text-sm text-[#c5ff41]" />
 					</button>
 
@@ -127,7 +128,7 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 				{/* Social Media & Contact Links Bar */}
 				<div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 text-zinc-400">
 					<a
-						href="https://www.linkedin.com/in/anishkumar-pythondev"
+						href="https://linkedin.com/in/anishkumar-python"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="p-2.5 rounded-full glass-card hover:text-[#0A66C2] hover:border-white/30 transition-all"
@@ -136,7 +137,7 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 						<FaLinkedin className="text-lg" />
 					</a>
 					<a
-						href="https://github.com/Anishkumar68"
+						href="https://github.com/anishkumar68"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="p-2.5 rounded-full glass-card hover:text-white hover:border-white/30 transition-all"
@@ -154,42 +155,42 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 					<a
 						href="tel:+916378757007"
 						className="p-2.5 rounded-full glass-card hover:text-[#c5ff41] hover:border-white/30 transition-all"
-						title="Phone: +91 6378757007"
+						title="Phone: +91 63787 57007"
 					>
 						<FiPhone className="text-lg" />
 					</a>
 				</div>
 
-				{/* Metrics / Stats Row (Inspired by Sawad's +12 YEARS, +46 PROJECTS) */}
+				{/* Metrics / Stats Row */}
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-14 sm:mt-20">
 					<div className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 text-center">
 						<div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-							1<span className="text-[#c5ff41]">+</span>
+							3<span className="text-[#c5ff41]">+</span>
 						</div>
 						<div className="text-xs sm:text-sm font-semibold text-zinc-400 uppercase tracking-wider mt-1">
 							Years Experience
 						</div>
-						<div className="text-[11px] text-zinc-500 mt-1">Commercial Python & Web</div>
+						<div className="text-[11px] text-zinc-500 mt-1">Python, FastAPI, AWS & AI</div>
 					</div>
 
 					<div className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 text-center">
 						<div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-							10<span className="text-[#c5ff41]">+</span>
+							15<span className="text-[#c5ff41]">+</span>
 						</div>
 						<div className="text-xs sm:text-sm font-semibold text-zinc-400 uppercase tracking-wider mt-1">
-							Projects Built
+							Services & Integrations
 						</div>
-						<div className="text-[11px] text-zinc-500 mt-1">AI, FinTech & Portals</div>
+						<div className="text-[11px] text-zinc-500 mt-1">E-Commerce, Health & FinTech</div>
 					</div>
 
 					<div className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 text-center">
 						<div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
-							94<span className="text-[#c5ff41]">%</span>
+							99.9<span className="text-[#c5ff41]">%</span>
 						</div>
 						<div className="text-xs sm:text-sm font-semibold text-zinc-400 uppercase tracking-wider mt-1">
-							Web Performance
+							Cloud Reliability
 						</div>
-						<div className="text-[11px] text-zinc-500 mt-1">Lighthouse Score Achieved</div>
+						<div className="text-[11px] text-zinc-500 mt-1">AWS Serverless & DynamoDB</div>
 					</div>
 
 					<div className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 text-center">
@@ -203,7 +204,7 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 					</div>
 				</div>
 
-				{/* Continuous Scrolling Marquee Ribbon (Sawad style) */}
+				{/* Continuous Scrolling Marquee Ribbon */}
 				<div className="relative mt-12 sm:mt-16 py-4 overflow-hidden border-y border-white/[0.08] bg-black/40">
 					<div className="flex w-max animate-marquee space-x-8">
 						{[...tickerItems, ...tickerItems, ...tickerItems].map((item, idx) => (
@@ -223,43 +224,43 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 								Quick Overview for Recruiters
 							</span>
 							<h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
-								Ready to Contribute from Day One
+								Production Systems & Cloud Architecture
 							</h3>
 						</div>
 						<button
 							onClick={() => onSelectTab("career")}
 							className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-black hover:bg-zinc-200 transition-all self-start md:self-auto"
 						>
-							<span>Explore Full Career & Projects</span>
+							<span>Explore Full Experience</span>
 							<FiArrowRight />
 						</button>
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
 						<div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-							<div className="text-xs font-semibold text-[#c5ff41] uppercase">Current Commercial Role</div>
-							<div className="text-base font-bold text-white mt-1">Python Developer</div>
-							<div className="text-xs text-zinc-400 mt-0.5">Nihal Software (Gurugram) • 2023 - Present</div>
+							<div className="text-xs font-semibold text-[#c5ff41] uppercase">Latest Commercial Role</div>
+							<div className="text-base font-bold text-white mt-1">Software Engineer</div>
+							<div className="text-xs text-zinc-400 mt-0.5">Thoughts2Binary • May 2026 – Present</div>
 							<p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-								Engineered conversational chatbots & AI services with LLM/NLP pipelines for educational platforms.
+								Quivers middleware team: building scalable APIs, auto-shipping routing logic, and AWS event-driven integrations.
 							</p>
 						</div>
 
 						<div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-							<div className="text-xs font-semibold text-[#c5ff41] uppercase">Key Technical Breadth</div>
-							<div className="text-base font-bold text-white mt-1">Full-Stack & AI</div>
-							<div className="text-xs text-zinc-400 mt-0.5">Python, Django, React, MySQL, Docker</div>
+							<div className="text-xs font-semibold text-[#c5ff41] uppercase">Cloud & Backend Depth</div>
+							<div className="text-base font-bold text-white mt-1">Python, FastAPI & AWS</div>
+							<div className="text-xs text-zinc-400 mt-0.5">AWS Lambda, DynamoDB, S3, SQS, Serverless</div>
 							<p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-								Hands-on across the stack from responsive interfaces to robust RESTful APIs and database schemas.
+								Hands-on experience architecting microservices, caching, serverless pipelines, and database optimization.
 							</p>
 						</div>
 
 						<div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-							<div className="text-xs font-semibold text-[#c5ff41] uppercase">Education & Training</div>
-							<div className="text-base font-bold text-white mt-1">B.Tech (CSE) & Polytechnic</div>
-							<div className="text-xs text-zinc-400 mt-0.5">Diploma GPA: 8.04 • 1-Yr Full Stack Certified</div>
+							<div className="text-xs font-semibold text-[#c5ff41] uppercase">AI, LLM & RAG Solutions</div>
+							<div className="text-base font-bold text-white mt-1">LangChain, OpenAI & DeepSeek</div>
+							<div className="text-xs text-zinc-400 mt-0.5">RAG, PaddleOCR, Vapi, n8n, Prompt Eng</div>
 							<p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-								Deep computer science fundamentals combined with practical, continuous hands-on project building.
+								Built intelligent document validation systems (VerifAI) and conversational assistants (CampusBot).
 							</p>
 						</div>
 					</div>

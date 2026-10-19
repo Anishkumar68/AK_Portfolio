@@ -176,7 +176,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 							rows="3"
 							value={message}
 							onChange={(e) => setMessage(e.target.value)}
-							placeholder="We have an opening for a Python / Full-Stack developer..."
+							placeholder="We have an opening for a Software Engineer / Python / AWS developer..."
 							required
 							className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#c5ff41] transition-colors resize-none"
 						/>
@@ -194,7 +194,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 				{/* Social links row */}
 				<div className="flex items-center justify-center gap-4 mt-5 pt-4 border-t border-white/[0.06] text-zinc-400">
 					<a
-						href="https://www.linkedin.com/in/anishkumar-pythondev"
+						href="https://linkedin.com/in/anishkumar-python"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex items-center gap-1.5 text-xs hover:text-[#0A66C2] transition-colors"
@@ -204,7 +204,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 					</a>
 					<span className="text-zinc-600">•</span>
 					<a
-						href="https://github.com/Anishkumar68"
+						href="https://github.com/anishkumar68"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex items-center gap-1.5 text-xs hover:text-white transition-colors"

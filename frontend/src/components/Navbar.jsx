@@ -29,7 +29,7 @@ const Navbar = ({ activeTab, onSelectTab, onOpenContact }) => {
 							Anish Kumar
 						</span>
 						<span className="hidden sm:inline-block text-[10px] text-zinc-400 font-medium tracking-wide">
-							Python Full-Stack Dev
+							Software Engineer • Python & AWS
 						</span>
 					</div>
 				</button>

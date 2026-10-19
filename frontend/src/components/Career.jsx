@@ -1,103 +1,102 @@
 import React from "react";
 import { FiDownload, FiExternalLink, FiBriefcase, FiCalendar, FiMapPin, FiCheckCircle, FiFolder } from "react-icons/fi";
-import { FaGithub, FaPython, FaReact } from "react-icons/fa";
-import { SiDjango, SiOpenai, SiTailwindcss, SiMysql } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
 
 const Career = ({ onOpenContact }) => {
 	const experiences = [
 		{
+			role: "Software Engineer",
+			company: "Thoughts2Binary",
+			period: "May 2026 – present",
+			location: "Gurugram | Remote",
+			status: "Latest Commercial Role",
+			description: "Contributed to the Quivers middleware Team connecting e-commerce, ERP, and fulfillment systems through scalable integrations.",
+			achievements: [
+				"Developed granular APIs to enable dynamic client-specific customizations across multiple e-commerce platforms (Shopify, WooCommerce, BigCommerce).",
+				"Implemented auto-shipping and drop-profile routing logic to support configurable fulfillment workflows.",
+				"Enhanced middleware services for Shopify, WooCommerce, BigCommerce, ERP, and FTP/SFTP integrations.",
+				"Worked with AWS Lambda, DynamoDB, S3, SQS, CloudWatch, and Serverless Framework to support event-driven processing.",
+				"Resolved production issues, optimized integration workflows, and improved platform reliability through debugging and monitoring.",
+				"Worked on multiple repositories, shared core modules, and client-specific customizers using Git, Bitbucket, Jira, and Slack.",
+			],
+			skills: ["Python", "AWS Lambda", "DynamoDB", "S3", "SQS", "Serverless Framework", "Shopify", "CloudWatch"],
+		},
+		{
+			role: "MTS (Member of Technical Staff)",
+			company: "Yuva Health (Eines Healthcare Pvt. Ltd.)",
+			period: "Sept 2025 – May 2026",
+			location: "Delhi",
+			status: "Completed",
+			description: "Maintained scalable backend APIs and built microservices for a production healthcare platform.",
+			achievements: [
+				"Built microservices for automated PDF generation, transactional email, SMS, and alert notification workflows.",
+				"Delivered core healthcare features including OPD booking, cashless OPD, and emergency claim workflows.",
+				"Enhanced the Admin panel and user UI/UX, implementing admin activity logging and system health monitoring.",
+				"Maintained production backend APIs with robust data validation and error handling.",
+			],
+			skills: ["Python", "FastAPI", "Microservices", "PDF Generation", "Healthcare Systems", "Admin Panel"],
+		},
+		{
 			role: "Python Developer",
 			company: "Nihal Software",
-			period: "09/2023 – Present",
-			location: "Gurugram, Haryana",
-			status: "Current Commercial Role",
-			description: "Core member of engineering team developing AI-powered web solutions and conversational chatbots.",
-			achievements: [
-				"Architected & developed LLM and NLP-based conversational chatbots integrated into the StudentSpace.AI platform.",
-				"Engineered performance optimizations elevating web performance score from 60% to 94% with 100% SEO audit score.",
-				"Trained and mentored LearningSpace.AI interns on Python development, REST API design, and chatbot prompt architectures.",
-				"Assisted recruitment efforts by technically screening software developer candidates and evaluating code exercises.",
-			],
-			skills: ["Python", "Django", "LLMs", "NLP", "React", "REST APIs", "Chatbot Dev"],
-		},
-		{
-			role: "IT Technical Support",
-			company: "UK-India Business Council",
-			period: "06/2023 – 08/2023",
+			period: "Sept 2023 – Sept 2025",
 			location: "Gurugram, Haryana",
 			status: "Completed",
-			description: "Provided enterprise technical infrastructure, diagnostic, and systems operations support.",
+			description: "Developed AI-integrated applications, conversational workflows, and REST APIs.",
 			achievements: [
-				"Diagnosed and resolved critical hardware, software, and local network connectivity challenges for international staff.",
-				"Maintained system uptime and assisted staff with digital workflows and security standards.",
+				"Developed AI-integrated applications using Python, LangChain, and RAG architectures.",
+				"Designed and built scalable REST APIs for real-time conversational workflows.",
+				"Built and deployed CampusBot to automate student support and campus knowledge retrieval.",
+				"Managed deployments, feature releases, bug fixes, and ongoing production support.",
 			],
-			skills: ["IT Support", "Networking", "System Diagnostics", "Troubleshooting"],
-		},
-		{
-			role: "Web Development Intern",
-			company: "Code Session Academy",
-			period: "12/2021 – 01/2022",
-			location: "Remote / Haryana",
-			status: "Completed",
-			description: "Hands-on intensive internship on web fundamentals, responsive styling, and modern JavaScript.",
-			achievements: [
-				"Built interactive, mobile-responsive web pages with vanilla JavaScript, modern CSS, and HTML5 semantic structure.",
-				"Adopted version control workflows with Git and GitHub in a collaborative developer team environment.",
-			],
-			skills: ["HTML5", "CSS3", "JavaScript", "Git & GitHub", "Responsive Design"],
+			skills: ["Python", "LangChain", "RAG", "OpenAI", "REST APIs", "CampusBot", "Deployments"],
 		},
 	];
 
 	const projects = [
 		{
-			title: "StudentSpace.AI Web Platform",
-			tagline: "AI-Powered Educational Discovery Portal",
-			description: "Engineered a high-performance web platform integrating intelligent conversational chatbots to assist students in finding programs, campus info, and college admissions resources.",
-			impact: "Boosted performance score from 60% to 94% and achieved 100% SEO optimization score.",
-			image: "/portfolio_img.png",
-			tech: ["Python", "Django", "React", "NLP/LLM", "Tailwind CSS"],
-			github: "https://github.com/Anishkumar68",
-			live: "https://studentspace.ai",
-		},
-		{
-			title: "CampusBot - US College Assistant",
-			tagline: "Conversational AI for University Campuses",
-			description: "Designed and trained an intelligent chatbot specifically for USA-based universities to handle high-volume inquiries regarding campus maps, financial aid, coursework, and departmental contact directories.",
-			impact: "Automated 80%+ of repetitive student inquiries with instant accurate responses.",
-			image: "/blog-img.jpg",
-			tech: ["Python", "OpenAI API", "spaCy NLP", "Botpress", "REST APIs"],
-			github: "https://github.com/Anishkumar68",
-			live: null,
-		},
-		{
-			title: "Sewa Bharat Operations Dashboard",
-			tagline: "Enterprise Analytics with Microsoft Fabric",
-			description: "Engineered an analytics dashboard featuring live synchronization of organizational operational data, hierarchy-based role logins, and Microsoft Fabric administration panels.",
-			impact: "Streamlined multi-tier management reporting with secure role-based data isolation.",
+			title: "Quivers E-Commerce Middleware Platform",
+			tagline: "AWS Serverless & Multi-Platform Integrations",
+			period: "May 2026 – present",
+			description: "Contributed to Quivers middleware connecting e-commerce stores (Shopify, WooCommerce, BigCommerce), ERP systems, and fulfillment warehouses via event-driven serverless services.",
+			impact: "Engineered auto-shipping routing logic, drop-profile fulfillment, and order/inventory synchronization over AWS Lambda & DynamoDB.",
 			image: "/git code pushing map.png",
-			tech: ["Power BI", "Microsoft Fabric", "Python", "Data Sync"],
-			github: "https://github.com/Anishkumar68",
+			tech: ["Python", "AWS Lambda", "DynamoDB", "S3", "SQS", "Serverless", "FTP/SFTP"],
+			github: "https://github.com/anishkumar68",
 			live: null,
 		},
 		{
-			title: "FinTech Digital Bank Application",
-			tagline: "Secure Online Banking & Transaction Portal",
-			description: "Developed a digital banking interface with secure user authentication, real-time balance queries, instant fund transfers, and ledger history logging.",
-			impact: "Clean transaction management with atomic database updates and responsive user UI.",
+			title: "VerifAI – Insurance Verification System",
+			tagline: "Intelligent Fraud Detection & Document Validation Agent",
+			period: "Mar 2026 – Apr 2026",
+			description: "Developed an AI agent that empowers insurance teams to detect fraud and validate policy applications automatically by combining OCR document extraction with LLM reasoning.",
+			impact: "Implemented RAG with AWS S3, PaddleOCR, and DeepSeek/OpenAI models; built a high-throughput FastAPI backend with Redis caching.",
+			image: "/portfolio_img.png",
+			tech: ["Python", "FastAPI", "OpenAI", "DeepSeek", "PaddleOCR", "LangChain", "RAG", "Redis"],
+			github: "https://github.com/anishkumar68",
+			live: null,
+		},
+		{
+			title: "Yuva Health Healthcare Platform",
+			tagline: "Scalable Healthcare Microservices & Claims Portal",
+			period: "Sept 2025 – May 2026",
+			description: "Engineered core backend services powering cashless OPD booking, emergency insurance claims, and automated hospital PDF generation.",
+			impact: "Built resilient notification microservices (SMS, email) and comprehensive admin activity logging with enhanced monitoring.",
 			image: "/digitalbank.png",
-			tech: ["Python", "Django", "SQLite", "JavaScript", "Tailwind CSS"],
-			github: "https://github.com/Anishkumar68",
+			tech: ["Python", "FastAPI", "Microservices", "MySQL", "PDF Engine", "REST APIs"],
+			github: "https://github.com/anishkumar68",
 			live: null,
 		},
 		{
-			title: "Interactive Game & Utility Hub",
-			tagline: "JavaScript State & DOM Manipulation Suite",
-			description: "A fast, interactive web suite including a number guessing game and utility tools designed to demonstrate precision DOM operations, state handlers, and animations.",
-			impact: "Lightweight, zero-dependency, ultra-fast client-side execution.",
-			image: "/guess the number.png",
-			tech: ["JavaScript (ES6+)", "CSS3", "HTML5", "Vite"],
-			github: "https://github.com/Anishkumar68",
-			live: "https://anishkumar68.github.io/AK_Portfolio/",
+			title: "CampusBot & StudentSpace.AI",
+			tagline: "Conversational AI Assistant for Student Support",
+			period: "Sept 2023 – Sept 2025",
+			description: "Intelligent conversational assistant and educational portal built using LangChain and RAG to automate college inquiries, department guidance, and admissions FAQ.",
+			impact: "Delivered real-time student query resolution with sub-second response times and automated knowledge retrieval.",
+			image: "/blog-img.jpg",
+			tech: ["Python", "LangChain", "RAG", "OpenAI", "React.js", "REST APIs"],
+			github: "https://github.com/anishkumar68",
+			live: null,
 		},
 	];
 
@@ -112,7 +111,7 @@ const Career = ({ onOpenContact }) => {
 					Career & <span className="text-shine">Work</span>
 				</h1>
 				<p className="text-sm sm:text-base text-zinc-400 mt-3 leading-relaxed">
-					Commercial work experience, quantifiable engineering achievements, and featured project implementations.
+					Commercial work experience across e-commerce middleware, digital health, and AI agents.
 				</p>
 			</div>
 
@@ -127,10 +126,10 @@ const Career = ({ onOpenContact }) => {
 							Official Document
 						</div>
 						<h3 className="text-lg sm:text-xl font-extrabold text-white">
-							Anish Kumar — One Page Resume (PDF)
+							Anish Kumar — Resume (PDF)
 						</h3>
 						<p className="text-xs text-zinc-400 mt-0.5">
-							Updated September 2024 • Tailored for Python & Full-Stack Engineering roles
+							Software Engineer • Python, FastAPI, AWS & AI Integrations
 						</p>
 					</div>
 				</div>
@@ -176,7 +175,7 @@ const Career = ({ onOpenContact }) => {
 						>
 							<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/[0.06]">
 								<div>
-									<div className="flex items-center gap-2">
+									<div className="flex items-center gap-2 flex-wrap">
 										<h3 className="text-xl sm:text-2xl font-black text-white">
 											{exp.role}
 										</h3>
@@ -199,7 +198,7 @@ const Career = ({ onOpenContact }) => {
 
 								<div className="self-start sm:self-auto">
 									<span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-										exp.status.includes("Current")
+										exp.status.includes("Latest")
 											? "bg-[#c5ff41]/10 text-[#c5ff41] border border-[#c5ff41]/30"
 											: "bg-white/[0.05] text-zinc-400 border border-white/10"
 									}`}>
@@ -208,7 +207,7 @@ const Career = ({ onOpenContact }) => {
 								</div>
 							</div>
 
-							<p className="text-xs sm:text-sm text-zinc-300 mt-4 leading-relaxed">
+							<p className="text-xs sm:text-sm text-zinc-300 mt-4 leading-relaxed font-normal">
 								{exp.description}
 							</p>
 
@@ -245,10 +244,10 @@ const Career = ({ onOpenContact }) => {
 						Portfolio Showcase
 					</span>
 					<h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1">
-						Featured Projects
+						Featured Projects & Systems
 					</h2>
 					<p className="text-xs sm:text-sm text-zinc-400 mt-1">
-						Real applications with production architectures, clean code, and measurable performance.
+						Enterprise integrations, serverless microservices, and AI-powered automation platforms.
 					</p>
 				</div>
 
@@ -281,6 +280,9 @@ const Career = ({ onOpenContact }) => {
 							{/* Card Body */}
 							<div className="p-6 flex-1 flex flex-col justify-between">
 								<div>
+									<div className="flex items-center justify-between text-xs text-zinc-500 mb-1">
+										<span>{project.period}</span>
+									</div>
 									<h3 className="text-xl font-bold text-white group-hover:text-[#c5ff41] transition-colors">
 										{project.title}
 									</h3>
@@ -290,7 +292,7 @@ const Career = ({ onOpenContact }) => {
 
 									{/* Impact callout */}
 									<div className="mt-3.5 p-3 rounded-xl bg-white/[0.03] border border-white/[0.05] text-xs text-zinc-300 flex items-start gap-2">
-										<span className="text-[#c5ff41] font-bold">Impact:</span>
+										<span className="text-[#c5ff41] font-bold">Key Contribution:</span>
 										<span>{project.impact}</span>
 									</div>
 								</div>
@@ -317,7 +319,7 @@ const Career = ({ onOpenContact }) => {
 												className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/[0.06] text-white hover:bg-white/[0.12] transition-colors"
 											>
 												<FaGithub className="text-sm" />
-												<span>Source Code</span>
+												<span>GitHub</span>
 											</a>
 										)}
 
@@ -328,7 +330,7 @@ const Career = ({ onOpenContact }) => {
 												rel="noopener noreferrer"
 												className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#c5ff41] text-[#0c0c0f] hover:bg-[#b0eb31] transition-colors"
 											>
-												<span>Live Demo</span>
+												<span>Live System</span>
 												<FiExternalLink className="text-xs" />
 											</a>
 										)}
@@ -346,7 +348,7 @@ const Career = ({ onOpenContact }) => {
 					Want to Discuss an Opportunity?
 				</h3>
 				<p className="text-xs sm:text-sm text-zinc-400 max-w-lg mx-auto mt-2 leading-relaxed">
-					Whether you have an open Full-Stack, Python backend, or AI role, I would love to hear from you. Let's set up a technical chat.
+					Whether you have an opening for a Python Developer, Backend/AWS Engineer, or AI Systems specialist, I would love to connect.
 				</p>
 				<div className="flex items-center justify-center gap-4 mt-6">
 					<button

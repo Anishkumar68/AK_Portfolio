@@ -1,12 +1,12 @@
 # Anish Kumar — Developer Portfolio
 
-> **Live Demo:** [https://anishkumar68.github.io/AK_Portfolio/](https://anishkumar68.github.io/AK_Portfolio/)
+> **Live Demo:** [[https://ak-portfolio-rho-hazel.vercel.app/#](https://ak-portfolio-rho-hazel.vercel.app/#)]
 
-A minimalist, high-performance developer portfolio built for job search. Inspired by the sleek [Sawad](https://sawad.framer.website/) aesthetic with smooth tab navigation, shine text effects, and recruiter-focused quick connect actions.
+A minimalist, high-performance developer portfolio built for job.aesthetic with smooth tab navigation, shine text effects, and recruiter-focused quick connect actions.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Lite 3-Tab Architecture**: Seamless switching between **Home**, **About**, and **Career** with active pill indicators.
 - **Hero Page**: Centered portrait with ambient glow, glowing floating badges, and high-impact animated shine typography.
@@ -16,7 +16,7 @@ A minimalist, high-performance developer portfolio built for job search. Inspire
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 19, Vite, Tailwind CSS
 - **Icons & Motion**: React Icons, Framer Motion
@@ -24,7 +24,7 @@ A minimalist, high-performance developer portfolio built for job search. Inspire
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install dependencies
@@ -39,6 +39,6 @@ npm run build
 
 ---
 
-## 📝 Updating Portfolio Content
+## Updating Portfolio Content
 
 To update resume paths, project entries, skills, or contact info, simply edit **[`portfolioData.json`](./portfolioData.json)** in the root folder.

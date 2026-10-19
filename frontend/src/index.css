@@ -4,78 +4,93 @@
 
 @layer base {
 	html {
-		font-family: "Poppins", sans-serif;
-	}
-	.title {
-		@apply text-5xl font-bold text-[#ffcc00] hover:text-[#8502ff] transition-all duration-300 ease-in-out;
-	}
-	.hireme-btn {
-		@apply px-8 py-3 font-semibold bg-[#ffcc00] text-[#191a1a] rounded-md transition-all duration-300 ease-in-out hover:bg-[#ffd633] z-10;
-	}
-	.notification {
-		@apply flex flex-col relative w-72 h-32 rounded-xl overflow-hidden bg-[#29292c] isolate;
+		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		color-scheme: dark;
 	}
 
-	.notification::before {
-		content: "";
-		@apply absolute inset-0.5 rounded-[0.9375rem] bg-[#18181b] z-20;
+	body {
+		background-color: #0c0c0f;
+		color: #e2e2e8;
+		overflow-x: hidden;
 	}
 
-	.notification::after {
-		content: "";
-		@apply absolute w-1 h-[calc(100%-1.3rem)] left-2 top-[0.65rem] bg-gradient-to-b from-[#2eadff] via-[#3d83ff] to-[#7e61ff] rounded-sm transition-transform duration-300;
+	/* Custom dark scrollbar */
+	::-webkit-scrollbar {
+		width: 8px;
 	}
-
-	.notification:hover::after {
-		@apply translate-x-0.5;
+	::-webkit-scrollbar-track {
+		background: #0c0c0f;
 	}
-
-	.notititle,
-	.notibody {
-		@apply relative z-30;
+	::-webkit-scrollbar-thumb {
+		background: #23232b;
+		border-radius: 4px;
 	}
-
-	.notititle {
-		@apply text-[#32a6ff] font-medium text-lg pl-5 py-2.5 transition-transform duration-300;
+	::-webkit-scrollbar-thumb:hover {
+		background: #343440;
 	}
+}
 
-	.notification:hover .notititle {
-		@apply translate-x-1;
-	}
-
-	.notibody {
-		@apply text-[#99999d] px-5 transition-transform duration-300;
-	}
-
-	.notification:hover .notibody {
-		@apply translate-x-1.5;
-	}
-
-	.notiglow,
-	.notiborderglow {
-		@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20rem] h-[20rem];
-		background: radial-gradient(
-			circle closest-side at center,
-			white,
-			transparent
+@layer utilities {
+	/* High-impact Shine Text Effect */
+	.text-shine {
+		background: linear-gradient(
+			105deg,
+			#ffffff 0%,
+			#ffffff 35%,
+			#c5ff41 50%,
+			#ffffff 65%,
+			#ffffff 100%
 		);
-		opacity: 0;
-		transition: opacity 300ms ease;
+		background-size: 250% 100%;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textShine 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 	}
 
-	.notiglow {
-		@apply z-10;
+	.text-shine-gold {
+		background: linear-gradient(
+			105deg,
+			#ffffff 0%,
+			#ffffff 30%,
+			#ffd15c 50%,
+			#ffffff 70%,
+			#ffffff 100%
+		);
+		background-size: 250% 100%;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textShine 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 	}
 
-	.notiborderglow {
-		@apply z-0;
+	.glass-card {
+		background: rgba(22, 22, 28, 0.65);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		border: 1px solid rgba(255, 255, 255, 0.07);
 	}
 
-	.notification:hover .notiglow {
-		@apply opacity-10;
+	.glass-card-hover {
+		transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.glass-card-hover:hover {
+		transform: translateY(-3px);
+		background: rgba(28, 28, 36, 0.85);
+		border-color: rgba(197, 255, 65, 0.3);
+		box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6), 0 0 20px -6px rgba(197, 255, 65, 0.15);
 	}
 
-	.notification:hover .notiborderglow {
-		@apply opacity-10;
+	.glass-pill {
+		background: rgba(255, 255, 255, 0.04);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border: 1px solid rgba(255, 255, 255, 0.09);
+	}
+
+	.ambient-glow {
+		background: radial-gradient(
+			circle 600px at 50% 100px,
+			rgba(197, 255, 65, 0.07),
+			transparent 70%
+		);
 	}
 }

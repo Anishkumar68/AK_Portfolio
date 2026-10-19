@@ -3,42 +3,46 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["Inter", "Poppins", "sans-serif"],
+				heading: ["Poppins", "Inter", "sans-serif"],
+			},
+			colors: {
+				surface: {
+					DEFAULT: "#0d0d11",
+					card: "#141419",
+					cardHover: "#1a1a22",
+					border: "rgba(255, 255, 255, 0.08)",
+					borderHover: "rgba(255, 255, 255, 0.18)",
+				},
+				accent: {
+					DEFAULT: "#c5ff41", // Sawad signature neon lime
+					hover: "#b0eb31",
+					dim: "#88b81d",
+				},
+				muted: {
+					DEFAULT: "#9696a0",
+					dark: "#656570",
+				},
+			},
 			keyframes: {
-				// Loading Animation (Polygon Bounce & Particles)
-				bounce1: {
-					"0%, 100%": { transform: "translateY(36px)" },
-					"50%": { transform: "translateY(46px)" },
+				textShine: {
+					"0%": { backgroundPosition: "0% 50%" },
+					"100%": { backgroundPosition: "200% 50%" },
 				},
-				bounce2: {
-					"0%, 100%": { transform: "translateY(46px)" },
-					"50%": { transform: "translateY(56px)" },
+				marquee: {
+					"0%": { transform: "translateX(0%)" },
+					"100%": { transform: "translateX(-50%)" },
 				},
-				umbral: {
-					"0%": { stopColor: "rgba(211, 165, 16, 0.18)" },
-					"50%": { stopColor: "rgba(211, 165, 16, 0.52)" },
-					"100%": { stopColor: "rgba(211, 165, 16, 0.18)" },
-				},
-				particles: {
-					"0%, 100%": { transform: "translateY(16px)" },
-					"50%": { transform: "translateY(6px)" },
-				},
-
-				// Scroll Down Animation
-				scrollDown: {
-					"0%": { transform: "translateY(5px)", opacity: "0" },
-					"50%": { transform: "translateY(20px)", opacity: "1" },
-					"100%": { transform: "translateY(35px)", opacity: "0" },
+				float: {
+					"0%, 100%": { transform: "translateY(0px)" },
+					"50%": { transform: "translateY(-6px)" },
 				},
 			},
 			animation: {
-				// Loading Effect
-				bounce1: "bounce1 4s ease-in-out infinite",
-				bounce2: "bounce2 4s ease-in-out infinite",
-				umbral: "umbral 4s infinite",
-				particles: "particles 4s ease-in-out infinite",
-
-				// Scroll Down Indicator
-				scrollDown: "scrollDown 1.5s infinite ease-in-out",
+				shine: "textShine 4s linear infinite",
+				marquee: "marquee 25s linear infinite",
+				float: "float 6s ease-in-out infinite",
 			},
 		},
 	},

@@ -4,8 +4,8 @@
     "role": "Software Engineer",
     "specialization": "Python, FastAPI & AWS",
     "status": "Available for Immediate Hire",
-    "avatar": "/ak_pic.png",
-    "logo": "/aksvglogo.png",
+    "avatar": "/frontend/src/assets/logoak.png",
+    "logo": "/frontend/src/assets/logoak.png",
     "resumePdf": "/Anish_Kumar_One_Page_Resume.pdf",
     "resumeFilename": "Anish_Kumar_Resume.pdf",
     "email": "anishkumar231999@gmail.com",
@@ -23,8 +23,14 @@
     "headingTop": "SOFTWARE",
     "headingBottom": "ENGINEER",
     "floatingBadges": [
-      { "text": "Python & AWS", "icon": "python" },
-      { "text": "FastAPI & AI", "icon": "fastapi" }
+      {
+        "text": "Python & AWS",
+        "icon": "python"
+      },
+      {
+        "text": "FastAPI & AI",
+        "icon": "fastapi"
+      }
     ],
     "bio": "Hi, I'm Anish Kumar. A Software Engineer with 3+ years of experience building scalable backend systems, serverless architectures, and AI integrations using Python, FastAPI, and AWS.",
     "bioLocation": "Gurugram, Haryana • Experienced in REST APIs, Microservices, Event-Driven AWS & AI Workflows",
@@ -114,40 +120,120 @@
         "category": "Backend & Serverless",
         "description": "Scalable APIs, event-driven pipelines & microservices",
         "items": [
-          { "name": "Python", "level": "Expert", "iconKey": "python", "color": "#3776AB" },
-          { "name": "FastAPI", "level": "Advanced", "iconKey": "fastapi", "color": "#009688" },
-          { "name": "AWS Lambda", "level": "Advanced", "iconKey": "aws", "color": "#FF9900" },
-          { "name": "Django & Flask", "level": "Advanced", "iconKey": "django", "color": "#092E20" }
+          {
+            "name": "Python",
+            "level": "Expert",
+            "iconKey": "python",
+            "color": "#3776AB"
+          },
+          {
+            "name": "FastAPI",
+            "level": "Advanced",
+            "iconKey": "fastapi",
+            "color": "#009688"
+          },
+          {
+            "name": "AWS Lambda",
+            "level": "Advanced",
+            "iconKey": "aws",
+            "color": "#FF9900"
+          },
+          {
+            "name": "Django & Flask",
+            "level": "Advanced",
+            "iconKey": "django",
+            "color": "#092E20"
+          }
         ]
       },
       {
         "category": "Cloud & AWS Ecosystem",
         "description": "Production serverless, queues & monitoring",
         "items": [
-          { "name": "AWS (S3, SQS, CloudWatch)", "level": "Advanced", "iconKey": "aws", "color": "#FF9900" },
-          { "name": "Serverless Framework", "level": "Advanced", "iconKey": "cloud", "color": "#FD5750" },
-          { "name": "API Gateway & IAM", "level": "Proficient", "iconKey": "aws", "color": "#FF9900" },
-          { "name": "Docker & Linux", "level": "Advanced", "iconKey": "docker", "color": "#2496ED" }
+          {
+            "name": "AWS (S3, SQS, CloudWatch)",
+            "level": "Advanced",
+            "iconKey": "aws",
+            "color": "#FF9900"
+          },
+          {
+            "name": "Serverless Framework",
+            "level": "Advanced",
+            "iconKey": "cloud",
+            "color": "#FD5750"
+          },
+          {
+            "name": "API Gateway & IAM",
+            "level": "Proficient",
+            "iconKey": "aws",
+            "color": "#FF9900"
+          },
+          {
+            "name": "Docker & Linux",
+            "level": "Advanced",
+            "iconKey": "docker",
+            "color": "#2496ED"
+          }
         ]
       },
       {
         "category": "AI, LLM & RAG",
         "description": "Intelligent agents, retrieval & document pipelines",
         "items": [
-          { "name": "LangChain & RAG", "level": "Advanced", "iconKey": "openai", "color": "#10A37F" },
-          { "name": "OpenAI & DeepSeek", "level": "Advanced", "iconKey": "openai", "color": "#c5ff41" },
-          { "name": "PaddleOCR & Vision", "level": "Proficient", "iconKey": "python", "color": "#38bdf8" },
-          { "name": "Prompt Engineering", "level": "Expert", "iconKey": "openai", "color": "#a855f7" }
+          {
+            "name": "LangChain & RAG",
+            "level": "Advanced",
+            "iconKey": "openai",
+            "color": "#10A37F"
+          },
+          {
+            "name": "OpenAI & DeepSeek",
+            "level": "Advanced",
+            "iconKey": "openai",
+            "color": "#c5ff41"
+          },
+          {
+            "name": "PaddleOCR & Vision",
+            "level": "Proficient",
+            "iconKey": "python",
+            "color": "#38bdf8"
+          },
+          {
+            "name": "Prompt Engineering",
+            "level": "Expert",
+            "iconKey": "openai",
+            "color": "#a855f7"
+          }
         ]
       },
       {
         "category": "Databases & Full-Stack",
         "description": "NoSQL, relational, caching & client UIs",
         "items": [
-          { "name": "DynamoDB & Redis", "level": "Advanced", "iconKey": "redis", "color": "#DC382D" },
-          { "name": "MySQL & PostgreSQL", "level": "Advanced", "iconKey": "mysql", "color": "#4479A1" },
-          { "name": "React.js & Tailwind", "level": "Proficient", "iconKey": "react", "color": "#61DAFB" },
-          { "name": "Git & Bitbucket", "level": "Advanced", "iconKey": "git", "color": "#F05032" }
+          {
+            "name": "DynamoDB & Redis",
+            "level": "Advanced",
+            "iconKey": "redis",
+            "color": "#DC382D"
+          },
+          {
+            "name": "MySQL & PostgreSQL",
+            "level": "Advanced",
+            "iconKey": "mysql",
+            "color": "#4479A1"
+          },
+          {
+            "name": "React.js & Tailwind",
+            "level": "Proficient",
+            "iconKey": "react",
+            "color": "#61DAFB"
+          },
+          {
+            "name": "Git & Bitbucket",
+            "level": "Advanced",
+            "iconKey": "git",
+            "color": "#F05032"
+          }
         ]
       }
     ],
@@ -188,7 +274,16 @@
           "Resolved production issues, optimized integration workflows, and improved platform reliability through debugging and monitoring.",
           "Worked on multiple repositories, shared core modules, and client-specific customizers using Git, Bitbucket, Jira, and Slack."
         ],
-        "skills": ["Python", "AWS Lambda", "DynamoDB", "S3", "SQS", "Serverless Framework", "Shopify", "CloudWatch"]
+        "skills": [
+          "Python",
+          "AWS Lambda",
+          "DynamoDB",
+          "S3",
+          "SQS",
+          "Serverless Framework",
+          "Shopify",
+          "CloudWatch"
+        ]
       },
       {
         "role": "MTS (Member of Technical Staff)",
@@ -203,7 +298,14 @@
           "Enhanced the Admin panel and user UI/UX, implementing admin activity logging and system health monitoring.",
           "Maintained production backend APIs with robust data validation and error handling."
         ],
-        "skills": ["Python", "FastAPI", "Microservices", "PDF Generation", "Healthcare Systems", "Admin Panel"]
+        "skills": [
+          "Python",
+          "FastAPI",
+          "Microservices",
+          "PDF Generation",
+          "Healthcare Systems",
+          "Admin Panel"
+        ]
       },
       {
         "role": "Python Developer",
@@ -218,7 +320,15 @@
           "Built and deployed CampusBot to automate student support and campus knowledge retrieval.",
           "Managed deployments, feature releases, bug fixes, and ongoing production support."
         ],
-        "skills": ["Python", "LangChain", "RAG", "OpenAI", "REST APIs", "CampusBot", "Deployments"]
+        "skills": [
+          "Python",
+          "LangChain",
+          "RAG",
+          "OpenAI",
+          "REST APIs",
+          "CampusBot",
+          "Deployments"
+        ]
       }
     ],
     "projects": [
@@ -229,7 +339,15 @@
         "description": "Contributed to Quivers middleware connecting e-commerce stores (Shopify, WooCommerce, BigCommerce), ERP systems, and fulfillment warehouses via event-driven serverless services.",
         "impact": "Engineered auto-shipping routing logic, drop-profile fulfillment, and order/inventory synchronization over AWS Lambda & DynamoDB.",
         "image": "/git code pushing map.png",
-        "tech": ["Python", "AWS Lambda", "DynamoDB", "S3", "SQS", "Serverless", "FTP/SFTP"],
+        "tech": [
+          "Python",
+          "AWS Lambda",
+          "DynamoDB",
+          "S3",
+          "SQS",
+          "Serverless",
+          "FTP/SFTP"
+        ],
         "github": "https://github.com/anishkumar68",
         "live": null
       },
@@ -240,7 +358,16 @@
         "description": "Developed an AI agent that empowers insurance teams to detect fraud and validate policy applications automatically by combining OCR document extraction with LLM reasoning.",
         "impact": "Implemented RAG with AWS S3, PaddleOCR, and DeepSeek/OpenAI models; built a high-throughput FastAPI backend with Redis caching.",
         "image": "/portfolio_img.png",
-        "tech": ["Python", "FastAPI", "OpenAI", "DeepSeek", "PaddleOCR", "LangChain", "RAG", "Redis"],
+        "tech": [
+          "Python",
+          "FastAPI",
+          "OpenAI",
+          "DeepSeek",
+          "PaddleOCR",
+          "LangChain",
+          "RAG",
+          "Redis"
+        ],
         "github": "https://github.com/anishkumar68",
         "live": null
       },
@@ -251,7 +378,14 @@
         "description": "Engineered core backend services powering cashless OPD booking, emergency medical claims, and automated hospital PDF generation.",
         "impact": "Built resilient notification microservices (SMS, email) and comprehensive admin activity logging with enhanced monitoring.",
         "image": "/digitalbank.png",
-        "tech": ["Python", "FastAPI", "Microservices", "MySQL", "PDF Engine", "REST APIs"],
+        "tech": [
+          "Python",
+          "FastAPI",
+          "Microservices",
+          "MySQL",
+          "PDF Engine",
+          "REST APIs"
+        ],
         "github": "https://github.com/anishkumar68",
         "live": null
       },
@@ -262,7 +396,14 @@
         "description": "Intelligent conversational assistant and educational portal built using LangChain and RAG to automate college inquiries, department guidance, and admissions FAQ.",
         "impact": "Delivered real-time student query resolution with sub-second response times and automated knowledge retrieval.",
         "image": "/blog-img.jpg",
-        "tech": ["Python", "LangChain", "RAG", "OpenAI", "React.js", "REST APIs"],
+        "tech": [
+          "Python",
+          "LangChain",
+          "RAG",
+          "OpenAI",
+          "React.js",
+          "REST APIs"
+        ],
         "github": "https://github.com/anishkumar68",
         "live": null
       }

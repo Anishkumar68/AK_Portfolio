@@ -20,9 +20,7 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 							<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c5ff41] opacity-75" />
 							<span className="relative inline-flex rounded-full h-2 w-2 bg-[#c5ff41]" />
 						</span>
-						<span className="font-medium">
-							{hero.badge}
-						</span>
+						<span className="font-medium">{hero.badge}</span>
 					</div>
 				</div>
 
@@ -156,10 +154,15 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 				{/* Metrics / Stats Row */}
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-14 sm:mt-20">
 					{hero.stats.map((stat, idx) => (
-						<div key={idx} className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 text-center">
+						<div
+							key={idx}
+							className="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 text-center"
+						>
 							<div className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
 								{stat.value.replace(/[%+]/g, "")}
-								<span className="text-[#c5ff41]">{stat.value.match(/[%+]/)?.[0] || ""}</span>
+								<span className="text-[#c5ff41]">
+									{stat.value.match(/[%+]/)?.[0] || ""}
+								</span>
 							</div>
 							<div className="text-xs sm:text-sm font-semibold text-zinc-400 uppercase tracking-wider mt-1">
 								{stat.label}
@@ -172,15 +175,17 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 				{/* Continuous Scrolling Marquee Ribbon */}
 				<div className="relative mt-12 sm:mt-16 py-4 overflow-hidden border-y border-white/[0.08] bg-black/40">
 					<div className="flex w-max animate-marquee space-x-8">
-						{[...hero.marquee, ...hero.marquee, ...hero.marquee].map((item, idx) => (
-							<div
-								key={idx}
-								className="flex items-center space-x-3 text-xs sm:text-sm font-bold tracking-widest text-zinc-400 uppercase whitespace-nowrap"
-							>
-								<span>{item}</span>
-								<span className="text-[#c5ff41] text-xs">•</span>
-							</div>
-						))}
+						{[...hero.marquee, ...hero.marquee, ...hero.marquee].map(
+							(item, idx) => (
+								<div
+									key={idx}
+									className="flex items-center space-x-3 text-xs sm:text-sm font-bold tracking-widest text-zinc-400 uppercase whitespace-nowrap"
+								>
+									<span>{item}</span>
+									<span className="text-[#c5ff41] text-xs">•</span>
+								</div>
+							),
+						)}
 					</div>
 				</div>
 
@@ -206,9 +211,16 @@ const Hero = ({ onSelectTab, onOpenContact }) => {
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
 						{hero.quickOverview.map((item, idx) => (
-							<div key={idx} className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-								<div className="text-xs font-semibold text-[#c5ff41] uppercase">{item.label}</div>
-								<div className="text-base font-bold text-white mt-1">{item.title}</div>
+							<div
+								key={idx}
+								className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]"
+							>
+								<div className="text-xs font-semibold text-[#c5ff41] uppercase">
+									{item.label}
+								</div>
+								<div className="text-base font-bold text-white mt-1">
+									{item.title}
+								</div>
 								<div className="text-xs text-zinc-400 mt-0.5">{item.meta}</div>
 								<p className="text-xs text-zinc-400 mt-2 leading-relaxed">
 									{item.desc}

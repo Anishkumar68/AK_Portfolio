@@ -16,7 +16,7 @@ const Navbar = ({ activeTab, onSelectTab, onOpenContact }) => {
 				>
 					<div className="relative">
 						<img
-							src={personal.avatar}
+							src={personal.logo}
 							alt={personal.name}
 							className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-white/20 group-hover:border-[#c5ff41] transition-all duration-300 shadow-md"
 							onError={(e) => {

@@ -18,7 +18,7 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 					<div className="flex flex-col items-center md:items-start text-center md:text-left">
 						<div className="flex items-center gap-2.5">
 							<img
-								src={personal.avatar}
+								src={personal.logo}
 								alt={personal.name}
 								className="w-7 h-7 rounded-full object-cover border border-white/20"
 								onError={(e) => {
@@ -102,7 +102,8 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 
 				<div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 text-[11px] text-zinc-500">
 					<div>
-						© {new Date().getFullYear()} {personal.name}. Built for high performance & clean readability.
+						© {new Date().getFullYear()} {personal.name}. Built for high
+						performance & clean readability.
 					</div>
 					<div className="flex items-center gap-2">
 						<span className="w-1.5 h-1.5 rounded-full bg-[#c5ff41]" />

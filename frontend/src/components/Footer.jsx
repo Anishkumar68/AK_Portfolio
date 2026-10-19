@@ -1,8 +1,11 @@
 import React from "react";
-import { FiDownload, FiArrowUp, FiMail } from "react-icons/fi";
+import { FiArrowUp } from "react-icons/fi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import portfolioData from "../data/portfolioData.json";
 
 const Footer = ({ onSelectTab, onOpenContact }) => {
+	const { personal, socials } = portfolioData;
+
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
@@ -15,20 +18,20 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 					<div className="flex flex-col items-center md:items-start text-center md:text-left">
 						<div className="flex items-center gap-2.5">
 							<img
-								src="/ak_pic.png"
-								alt="Anish Kumar"
+								src={personal.avatar}
+								alt={personal.name}
 								className="w-7 h-7 rounded-full object-cover border border-white/20"
 								onError={(e) => {
 									e.target.onerror = null;
-									e.target.src = "/aksvglogo.png";
+									e.target.src = personal.logo;
 								}}
 							/>
 							<span className="font-bold text-white text-base tracking-tight">
-								Anish Kumar
+								{personal.name}
 							</span>
 						</div>
 						<p className="text-xs text-zinc-500 mt-1">
-							Software Engineer (Python, FastAPI & AWS) • Gurugram, India
+							{personal.role} ({personal.specialization}) • {personal.location}
 						</p>
 					</div>
 
@@ -36,32 +39,32 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 					<div className="flex items-center gap-6 text-xs font-semibold text-zinc-400">
 						<button
 							onClick={() => onSelectTab("home")}
-							className="hover:text-white transition-colors"
+							className="hover:text-white transition-colors cursor-pointer"
 						>
 							Home
 						</button>
 						<button
 							onClick={() => onSelectTab("about")}
-							className="hover:text-white transition-colors"
+							className="hover:text-white transition-colors cursor-pointer"
 						>
 							About
 						</button>
 						<button
 							onClick={() => onSelectTab("career")}
-							className="hover:text-white transition-colors"
+							className="hover:text-white transition-colors cursor-pointer"
 						>
 							Career
 						</button>
 						<a
-							href="/Anish_Kumar_One_Page_Resume.pdf"
-							download="Anish_Kumar_Resume.pdf"
+							href={personal.resumePdf}
+							download={personal.resumeFilename}
 							className="text-[#c5ff41] hover:underline"
 						>
 							Resume (PDF)
 						</a>
 						<button
 							onClick={onOpenContact}
-							className="hover:text-white transition-colors"
+							className="hover:text-white transition-colors cursor-pointer"
 						>
 							Contact
 						</button>
@@ -70,7 +73,7 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 					{/* Socials & Back to Top */}
 					<div className="flex items-center gap-3">
 						<a
-							href="https://linkedin.com/in/anishkumar-python"
+							href={socials.linkedin}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="p-2 rounded-full glass-card hover:text-[#0A66C2] transition-colors"
@@ -79,7 +82,7 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 							<FaLinkedin className="text-sm" />
 						</a>
 						<a
-							href="https://github.com/anishkumar68"
+							href={socials.github}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="p-2 rounded-full glass-card hover:text-white transition-colors"
@@ -89,7 +92,7 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 						</a>
 						<button
 							onClick={scrollToTop}
-							className="p-2 rounded-full glass-card hover:text-[#c5ff41] transition-colors ml-2"
+							className="p-2 rounded-full glass-card hover:text-[#c5ff41] transition-colors ml-2 cursor-pointer"
 							title="Back to Top"
 						>
 							<FiArrowUp className="text-sm" />
@@ -99,11 +102,11 @@ const Footer = ({ onSelectTab, onOpenContact }) => {
 
 				<div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 text-[11px] text-zinc-500">
 					<div>
-						© {new Date().getFullYear()} Anish Kumar. Built for high performance & clean readability.
+						© {new Date().getFullYear()} {personal.name}. Built for high performance & clean readability.
 					</div>
 					<div className="flex items-center gap-2">
 						<span className="w-1.5 h-1.5 rounded-full bg-[#c5ff41]" />
-						<span className="text-zinc-400">Actively interviewing & open for roles</span>
+						<span className="text-zinc-400">{personal.status}</span>
 					</div>
 				</div>
 			</div>

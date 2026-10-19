@@ -1,117 +1,23 @@
 import React from "react";
 import { FiDownload, FiExternalLink, FiBriefcase, FiCalendar, FiMapPin, FiCheckCircle, FiFolder } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
+import portfolioData from "../data/portfolioData.json";
 
 const Career = ({ onOpenContact }) => {
-	const experiences = [
-		{
-			role: "Software Engineer",
-			company: "Thoughts2Binary",
-			period: "May 2026 – present",
-			location: "Gurugram | Remote",
-			status: "Latest Commercial Role",
-			description: "Contributed to the Quivers middleware Team connecting e-commerce, ERP, and fulfillment systems through scalable integrations.",
-			achievements: [
-				"Developed granular APIs to enable dynamic client-specific customizations across multiple e-commerce platforms (Shopify, WooCommerce, BigCommerce).",
-				"Implemented auto-shipping and drop-profile routing logic to support configurable fulfillment workflows.",
-				"Enhanced middleware services for Shopify, WooCommerce, BigCommerce, ERP, and FTP/SFTP integrations.",
-				"Worked with AWS Lambda, DynamoDB, S3, SQS, CloudWatch, and Serverless Framework to support event-driven processing.",
-				"Resolved production issues, optimized integration workflows, and improved platform reliability through debugging and monitoring.",
-				"Worked on multiple repositories, shared core modules, and client-specific customizers using Git, Bitbucket, Jira, and Slack.",
-			],
-			skills: ["Python", "AWS Lambda", "DynamoDB", "S3", "SQS", "Serverless Framework", "Shopify", "CloudWatch"],
-		},
-		{
-			role: "MTS (Member of Technical Staff)",
-			company: "Yuva Health (Eines Healthcare Pvt. Ltd.)",
-			period: "Sept 2025 – May 2026",
-			location: "Delhi",
-			status: "Completed",
-			description: "Maintained scalable backend APIs and built microservices for a production healthcare platform.",
-			achievements: [
-				"Built microservices for automated PDF generation, transactional email, SMS, and alert notification workflows.",
-				"Delivered core healthcare features including OPD booking, cashless OPD, and emergency claim workflows.",
-				"Enhanced the Admin panel and user UI/UX, implementing admin activity logging and system health monitoring.",
-				"Maintained production backend APIs with robust data validation and error handling.",
-			],
-			skills: ["Python", "FastAPI", "Microservices", "PDF Generation", "Healthcare Systems", "Admin Panel"],
-		},
-		{
-			role: "Python Developer",
-			company: "Nihal Software",
-			period: "Sept 2023 – Sept 2025",
-			location: "Gurugram, Haryana",
-			status: "Completed",
-			description: "Developed AI-integrated applications, conversational workflows, and REST APIs.",
-			achievements: [
-				"Developed AI-integrated applications using Python, LangChain, and RAG architectures.",
-				"Designed and built scalable REST APIs for real-time conversational workflows.",
-				"Built and deployed CampusBot to automate student support and campus knowledge retrieval.",
-				"Managed deployments, feature releases, bug fixes, and ongoing production support.",
-			],
-			skills: ["Python", "LangChain", "RAG", "OpenAI", "REST APIs", "CampusBot", "Deployments"],
-		},
-	];
-
-	const projects = [
-		{
-			title: "Quivers E-Commerce Middleware Platform",
-			tagline: "AWS Serverless & Multi-Platform Integrations",
-			period: "May 2026 – present",
-			description: "Contributed to Quivers middleware connecting e-commerce stores (Shopify, WooCommerce, BigCommerce), ERP systems, and fulfillment warehouses via event-driven serverless services.",
-			impact: "Engineered auto-shipping routing logic, drop-profile fulfillment, and order/inventory synchronization over AWS Lambda & DynamoDB.",
-			image: "/git code pushing map.png",
-			tech: ["Python", "AWS Lambda", "DynamoDB", "S3", "SQS", "Serverless", "FTP/SFTP"],
-			github: "https://github.com/anishkumar68",
-			live: null,
-		},
-		{
-			title: "VerifAI – Insurance Verification System",
-			tagline: "Intelligent Fraud Detection & Document Validation Agent",
-			period: "Mar 2026 – Apr 2026",
-			description: "Developed an AI agent that empowers insurance teams to detect fraud and validate policy applications automatically by combining OCR document extraction with LLM reasoning.",
-			impact: "Implemented RAG with AWS S3, PaddleOCR, and DeepSeek/OpenAI models; built a high-throughput FastAPI backend with Redis caching.",
-			image: "/portfolio_img.png",
-			tech: ["Python", "FastAPI", "OpenAI", "DeepSeek", "PaddleOCR", "LangChain", "RAG", "Redis"],
-			github: "https://github.com/anishkumar68",
-			live: null,
-		},
-		{
-			title: "Yuva Health Healthcare Platform",
-			tagline: "Scalable Healthcare Microservices & Claims Portal",
-			period: "Sept 2025 – May 2026",
-			description: "Engineered core backend services powering cashless OPD booking, emergency insurance claims, and automated hospital PDF generation.",
-			impact: "Built resilient notification microservices (SMS, email) and comprehensive admin activity logging with enhanced monitoring.",
-			image: "/digitalbank.png",
-			tech: ["Python", "FastAPI", "Microservices", "MySQL", "PDF Engine", "REST APIs"],
-			github: "https://github.com/anishkumar68",
-			live: null,
-		},
-		{
-			title: "CampusBot & StudentSpace.AI",
-			tagline: "Conversational AI Assistant for Student Support",
-			period: "Sept 2023 – Sept 2025",
-			description: "Intelligent conversational assistant and educational portal built using LangChain and RAG to automate college inquiries, department guidance, and admissions FAQ.",
-			impact: "Delivered real-time student query resolution with sub-second response times and automated knowledge retrieval.",
-			image: "/blog-img.jpg",
-			tech: ["Python", "LangChain", "RAG", "OpenAI", "React.js", "REST APIs"],
-			github: "https://github.com/anishkumar68",
-			live: null,
-		},
-	];
+	const { personal, career } = portfolioData;
 
 	return (
 		<div className="pt-24 sm:pt-28 pb-20 max-w-5xl mx-auto px-4 sm:px-6">
 			{/* Page Header */}
 			<div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
 				<div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full glass-pill text-xs font-semibold text-[#c5ff41] uppercase tracking-wider mb-3">
-					Proven Track Record
+					{career.headline}
 				</div>
 				<h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight">
 					Career & <span className="text-shine">Work</span>
 				</h1>
 				<p className="text-sm sm:text-base text-zinc-400 mt-3 leading-relaxed">
-					Commercial work experience across e-commerce middleware, digital health, and AI agents.
+					{career.subtitle}
 				</p>
 			</div>
 
@@ -126,25 +32,25 @@ const Career = ({ onOpenContact }) => {
 							Official Document
 						</div>
 						<h3 className="text-lg sm:text-xl font-extrabold text-white">
-							Anish Kumar — Resume (PDF)
+							{personal.name} — Resume (PDF)
 						</h3>
 						<p className="text-xs text-zinc-400 mt-0.5">
-							Software Engineer • Python, FastAPI, AWS & AI Integrations
+							{personal.role} • {personal.specialization}
 						</p>
 					</div>
 				</div>
 
 				<div className="flex items-center gap-3 w-full md:w-auto">
 					<a
-						href="/Anish_Kumar_One_Page_Resume.pdf"
-						download="Anish_Kumar_Resume.pdf"
+						href={personal.resumePdf}
+						download={personal.resumeFilename}
 						className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#c5ff41] text-[#0c0c0f] hover:bg-[#b0eb31] transition-all shadow-lg active:scale-95"
 					>
 						<FiDownload className="text-base" />
 						<span>Download Resume</span>
 					</a>
 					<a
-						href="/Anish_Kumar_One_Page_Resume.pdf"
+						href={personal.resumePdf}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-full text-xs sm:text-sm font-semibold bg-white/[0.06] text-white hover:bg-white/[0.12] border border-white/10 transition-all"
@@ -168,7 +74,7 @@ const Career = ({ onOpenContact }) => {
 				</div>
 
 				<div className="space-y-6">
-					{experiences.map((exp, idx) => (
+					{career.experiences.map((exp, idx) => (
 						<div
 							key={idx}
 							className="glass-card rounded-3xl p-6 sm:p-8 border border-white/[0.08] hover:border-white/20 transition-all shadow-xl"
@@ -211,7 +117,7 @@ const Career = ({ onOpenContact }) => {
 								{exp.description}
 							</p>
 
-							{/* Key Achievements Bullet points */}
+							{/* Key Achievements Bullet points from JSON */}
 							<div className="mt-4 space-y-2.5">
 								{exp.achievements.map((ach, aIdx) => (
 									<div key={aIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300">
@@ -252,7 +158,7 @@ const Career = ({ onOpenContact }) => {
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-					{projects.map((project, idx) => (
+					{career.projects.map((project, idx) => (
 						<div
 							key={idx}
 							className="glass-card glass-card-hover rounded-3xl overflow-hidden border border-white/[0.08] flex flex-col group"
@@ -353,9 +259,9 @@ const Career = ({ onOpenContact }) => {
 				<div className="flex items-center justify-center gap-4 mt-6">
 					<button
 						onClick={onOpenContact}
-						className="px-7 py-3 rounded-full text-sm font-bold bg-[#c5ff41] text-black hover:bg-[#b0eb31] transition-all shadow-lg active:scale-95"
+						className="px-7 py-3 rounded-full text-sm font-bold bg-[#c5ff41] text-black hover:bg-[#b0eb31] transition-all shadow-lg active:scale-95 cursor-pointer"
 					>
-						Contact Anish Directly
+						Quick Connect With Anish
 					</button>
 				</div>
 			</div>
